@@ -1,0 +1,5 @@
+course: [DataFundamentals, IntroDataCleaning, IntroExploringData, GentleIntroGeocoding,
+  GentleIntroExtractingData, SchoolOfDataJourn, WorkingWithBudgetAndSpendingData]
+level: [basic, advanced, pro]
+theme: [scoping, finding, getting, cleaning, analyzing, visualizing, communicating,
+  managing]
