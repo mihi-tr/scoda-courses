@@ -11,7 +11,7 @@ sort_default={"theme":["scoping","finding","getting","cleaning",
       "SchoolOfDataJourn","WorkingWithBudgetAndSpendingData"],
      }
 
-template="overview.html.tmpl"
+template="templates/overview.html"
 outfile="courses.html"
 
 
