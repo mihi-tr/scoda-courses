@@ -1,0 +1,15 @@
+sheets:
+  modules: https://docs.google.com/spreadsheet/pub?key=0Aq9agjil66PydG9yelI0clFPMFJMaVE3M1gxMk9hV1E&single=true&gid=0&output=csv
+  course: https://docs.google.com/spreadsheet/pub?key=0Aq9agjil66PydG9yelI0clFPMFJMaVE3M1gxMk9hV1E&single=true&gid=1&output=csv
+  theme: https://docs.google.com/spreadsheet/pub?key=0Aq9agjil66PydG9yelI0clFPMFJMaVE3M1gxMk9hV1E&single=true&gid=2&output=csv
+  level: https://docs.google.com/spreadsheet/pub?key=0Aq9agjil66PydG9yelI0clFPMFJMaVE3M1gxMk9hV1E&single=true&gid=3&output=csv
+  tool: https://docs.google.com/spreadsheet/pub?key=0Aq9agjil66PydG9yelI0clFPMFJMaVE3M1gxMk9hV1E&single=true&gid=4&output=csv
+
+pages:
+- name: Courses
+  page: courses
+  items: modules
+  template: overview
+  slice: course
+  order: theme
+- 

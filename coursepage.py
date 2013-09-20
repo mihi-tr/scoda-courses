@@ -1,31 +1,12 @@
 import csv,urllib2
 import pystache
 
-key="0Aq9agjil66PydG9yelI0clFPMFJMaVE3M1gxMk9hV1E"
-
-sort_default={"theme":["scoping","finding","getting","cleaning",
-  "analyzing","visualizing","communicating","managing"],
-    "level":["basic","advanced","pro"],
-    "course":["DataFundamentals","IntroDataCleaning","IntroExploringData",
-      "GentleIntroGeocoding","GentleIntroExtractingData",
-      "SchoolOfDataJourn","WorkingWithBudgetAndSpendingData"],
-     }
-
-template="templates/overview.html"
-outfile="courses.html"
-
-
-url="https://docs.google.com/spreadsheet/pub?key=%s&single=true&gid=0&output=csv"%key
-
 
 class Overview():
-  def __init__(self,dimension,template="overview.html.tmpl",sort=None,sort_dim=None,url=url):
+  def __init__(self,data,dimension,template="overview.html.tmpl",sort=None,sort_dim=None):
     self.dimension=dimension
     self.template=template
-    self.url=url
-    u=urllib2.urlopen(url)
-    r=csv.DictReader(u)
-    self.data=[i for i in r]
+    self.data=data
     self.sort_dim=sort_dim
     if sort:
       self.sort=sort
