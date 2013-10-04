@@ -17,10 +17,12 @@ class Bot():
     else:
       s=None
       sd=None
+    slice=self.data[page['slice']]
     o=Overview(self.data[page['items']],page['slice'],
       template="templates/%s"%page['template'],
       sort=s,
-      sort_dim=sd)
+      order=sd,
+      slice=slice)
     f=open("_build/%s.html"%page['page'],"wb")
     f.write(o.render())
     f.close()
@@ -43,3 +45,9 @@ class Bot():
 
   def upload_page(self,p):
     pass
+
+if __name__=="__main__":
+  b=Bot("bot.yaml")
+  b.load_data()
+  b.render_pages()
+  b.upload_pages()
