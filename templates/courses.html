@@ -1,16 +1,25 @@
-
-<div id="courses">
-<ul>
+<style>.thumbnails li >p {display: none;}</style>
+<div id="grouplist">
 {{#groups}}
-<li>
-  {{name}}
+  <div class="group">
+  <h2>{{name}}</h2>
   <p>{{description}}</p>
-  <ul>
+  <ul class="thumbnails">
     {{#modules}}
-      <li><a href="{{link}}">{{title}}</a></li>
+      <li>
+        <a href="{{link}}" class="thumbnail sidelink">
+          <div class="row">
+            <div class="span2">
+              <img alt="{{title}}" src="{{image}}">
+            </div>
+            <div class="caption offset2">
+              <h3>{{title}}</h3>
+              <p>{{description}}</p>
+            </div></div>
+        </a>
+     </li>
     {{/modules}}
     </ul>
-    </li>
+    </div>
 {{/groups}}
-</ul>
 </div>

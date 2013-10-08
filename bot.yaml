@@ -9,7 +9,7 @@ pages:
 - name: Courses
   page: courses
   items: modules
-  template: overview.html
+  template: courses.html
   slice: course
   order: theme
 - name: Tools
