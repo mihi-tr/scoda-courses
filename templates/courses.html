@@ -1,0 +1,16 @@
+
+<div id="courses">
+<ul>
+{{#groups}}
+<li>
+  {{name}}
+  <p>{{description}}</p>
+  <ul>
+    {{#modules}}
+      <li><a href="{{link}}">{{title}}</a></li>
+    {{/modules}}
+    </ul>
+    </li>
+{{/groups}}
+</ul>
+</div>
