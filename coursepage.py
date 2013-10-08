@@ -21,17 +21,19 @@ class Overview():
       s=map(lambda x: x['tag'],slice)
       self.dim_levels=sorted([i for i in self.dim_levels], 
         key=lambda x: s.index(x))
+  
+  def decode(self,d):
+    return dict(((k,v.decode("utf-8")) for (k,v) in d.items()))
 
   def modules_per_group(self,slice):
     c=copy.copy(slice) 
     if self.sort: 
        s=map(lambda x: x['tag'],self.sort)
-       data=sorted(self.data, key=lambda x: (s.index(x[self.order]), x['Title']))
+       data=sorted(self.data, key=lambda x: (s.index(x[self.order]), x['title']))
     else:    
       data=self.data
-    c['modules']=[{"link":i['Link'], "title":i["Title"].decode("utf-8")} 
+    c['modules']=[self.decode(i)
       for i in filter(lambda x: c['tag'] in x[self.dimension].split(), data)]
-    print c  
     return c
     
   def render(self):
