@@ -40,11 +40,18 @@ class Bot():
     self.data[name]=[i for i in r]
     
   def upload_pages(self):
-    for p in self.config['pages']:
-      self.upload_page(p)
+    wp=pywordpress.Wordpress.init_from_config(self.wp_config)
+    pages=dict((("%s%s"%(self.config['bot']['prefix'],
+      p['page']),
+        self.prepare_page(p)) for p in self.config['pages']))
+    wp.create_many_pages(pages)
 
-  def upload_page(self,p):
-    pass
+  def prepare_page(self,page):
+    with open("_build/%s.html"%page['page']) as f:
+      return {"title": page['name'],
+          'description': f.read(),
+        'mt_allow_comments': 'open'}
+
 
 if __name__=="__main__":
   b=Bot("bot.yaml")

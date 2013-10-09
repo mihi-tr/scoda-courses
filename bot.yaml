@@ -5,6 +5,9 @@ sheets:
   level: https://docs.google.com/spreadsheet/pub?key=0Aq9agjil66PydG9yelI0clFPMFJMaVE3M1gxMk9hV1E&single=true&gid=3&output=csv
   tool: https://docs.google.com/spreadsheet/pub?key=0Aq9agjil66PydG9yelI0clFPMFJMaVE3M1gxMk9hV1E&single=true&gid=4&output=csv
 
+bot:
+  prefix: /beta/
+
 pages:
 - name: Courses
   page: courses

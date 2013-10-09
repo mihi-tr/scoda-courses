@@ -26,7 +26,7 @@ class Overview():
     return dict(((k,v.decode("utf-8")) for (k,v) in d.items()))
 
   def modules_per_group(self,slice):
-    c=copy.copy(slice) 
+    c=self.decode(copy.copy(slice))
     if self.sort: 
        s=map(lambda x: x['tag'],self.sort)
        data=sorted(self.data, key=lambda x: (s.index(x[self.order]), x['title']))
