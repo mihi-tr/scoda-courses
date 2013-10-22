@@ -2,10 +2,10 @@
 <style>.thumbnails li >p {display: none;}</style>
 <div id="grouplist">
 {{#groups}}
-  <div class="group">
+  <div class="group" id={{tag}}>
   <h2>{{name}}</h2>
   <p>{{{description}}}</p>
-  <a onclick="uncollapse(this);" class="more">Show Modules</a>
+  <a onclick="uncollapse(this);" class="more" href="#{{tag}}">Show Modules</a>
   <ul class="thumbnails">
     {{#modules}}
       <li>
@@ -28,10 +28,15 @@
 <script>
 function uncollapse(what) {
   $("ul.thumbnails").hide();
-  $("ul.thumbnails",$(what).parent().parent()).show();
+  $("div.group a.more").show();
+  $("ul.thumbnails",$(what).parent()).show();
+  $(what).hide();
   }
 $(document).ready(function() {
   $("ul.thumbnails").hide();
+  if (window.location.hash !== "") {
+    uncollapse($("a",$(window.location.hash))[0]);
+    };
   })
 </script>  
 [/raw]
