@@ -1,6 +1,7 @@
 import csv,urllib2
 import itertools
 import pystache
+import sys
 import copy
 
 
@@ -29,7 +30,7 @@ class Overview():
     c=self.decode(copy.copy(slice))
     if self.sort: 
        s=map(lambda x: x['tag'],self.sort)
-       data=sorted(self.data, key=lambda x: (s.index(x[self.order]), x['title']))
+       data=sorted(self.data, key=lambda x: (s.index(x[self.order]) if x[self.order] else sys.maxint, x['title']))
     else:    
       data=self.data
     c['modules']=[self.decode(i)

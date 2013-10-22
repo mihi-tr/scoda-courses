@@ -5,6 +5,7 @@
   <div class="group">
   <h2>{{name}}</h2>
   <p>{{{description}}}</p>
+  <a onclick="uncollapse(this);" class="more">Show Modules</a>
   <ul class="thumbnails">
     {{#modules}}
       <li>
@@ -24,4 +25,13 @@
     </div>
 {{/groups}}
 </div>
+<script>
+function uncollapse(what) {
+  $("ul.thumbnails").hide();
+  $("ul.thumbnails",$(what).parent().parent()).show();
+  }
+$(document).ready(function() {
+  $("ul.thumbnails").hide();
+  })
+</script>  
 [/raw]
